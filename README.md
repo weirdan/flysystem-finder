@@ -2,7 +2,7 @@ FlysystemFinder
 ================
 [![Build Status](https://travis-ci.org/weirdan/flysystem-finder.svg?branch=master)](https://travis-ci.org/weirdan/flysystem-finder)
 
-Attempt to marry symfony-finder and league/flysystem
+Attempt to marry symfony-finder and league/flysystem.
 
 #### Running tests
 ``` bash
