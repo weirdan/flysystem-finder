@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="FlysystemFinder">
+  <description>FlysystemFinder coding standard</description>
+  <arg value="np"/>
+  <rule ref="PSR2"/>
+  <file>./src</file>
+  <file>./tests</file>
+</ruleset>

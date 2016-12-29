@@ -1,0 +1,47 @@
+{
+    "name": "weirdan/flysystem-finder",
+    "description": "PHP project.",
+    "keywords": [
+        "flysystem",
+        "finder",
+        "symfonyfinder",
+        "symfony-finder"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruce Weirdan",
+            "email": "weirdan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "league/flysystem": "^1.0",
+        "symfony/finder": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weirdan\\FlysystemFinder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weirdan\\FlysystemFinder\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "configure-commit-template": "git config --add commit.template .gitmessage",
+        "lint": "vendor/bin/phpcs",
+        "lint-fix": "vendor/bin/phpcbf || true"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "^1.6",
+        "phpunit/phpunit": "^5.7",
+        "squizlabs/php_codesniffer": "^2.7"
+    }
+}
