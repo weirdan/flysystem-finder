@@ -22,6 +22,5 @@ before_script:
   - travis_retry composer install --no-interaction
 
 script:
-  - >
-    [ "${LINT}" = "true" ] && composer lint
+  - if [ "${LINT}" = "true" ]; then composer lint; fi
   - composer test
