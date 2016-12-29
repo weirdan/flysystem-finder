@@ -40,7 +40,7 @@ class RecursiveIterator implements SPLRecursiveInterface, Countable
         $dirContents = $this->fs->listContents($this->root, false);
         $list = [];
         foreach ($dirContents as $entry) {
-            $list[$entry['path']] = $this->fs->get($entry['path']);
+            $list[$entry['path']] = new HandlerFileinfoAdapter($this->fs->get($entry['path']));
         }
         $this->list = new ArrayIterator($list);
     }
@@ -55,7 +55,7 @@ class RecursiveIterator implements SPLRecursiveInterface, Countable
         if ($current->isFile()) {
             return false;
         }
-        return count($current->getContents()) > 0;
+        return count($current->getDirContents()) > 0;
     }
 
     /**
