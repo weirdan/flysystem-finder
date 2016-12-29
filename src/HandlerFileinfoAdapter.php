@@ -47,6 +47,6 @@ class HandlerFileinfoAdapter
 
     public function __call($method, $args)
     {
-        return [$this->handler, $method](...$args);
+        return call_user_func_array([$this->handler, $method], $args);
     }
 }
