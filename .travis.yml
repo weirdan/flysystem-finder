@@ -1,25 +1,23 @@
 language: php
-
 git:
   depth: 2
-
 matrix:
   include:
-    - php: 7.1
-      env: LINT=true
-    - php: nightly
-    - php: 7.0
+  - php: 7.1
+    env: LINT=true
+  - php: nightly
+  - php: 7.0
   fast_finish: true
-
 cache:
   directories:
-    - $HOME/.composer/cache
-
+  - "$HOME/.composer/cache"
 before_script:
-  - phpenv config-rm xdebug.ini || true
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction
-
+- phpenv config-rm xdebug.ini || true
+- travis_retry composer self-update
+- travis_retry composer install --no-interaction
 script:
-  - if [ "${LINT}" = "true" ]; then composer lint; fi
-  - composer test
+- if [ "${LINT}" = "true" ]; then composer lint; fi
+- composer test
+notifications:
+  slack:
+    secure: r7t+cDUviTPesLDxIPZnYAi9W/eqHi/FMEkLY4cc9LaUxn0KSJg9w+xYezIsqgZJ666qU4OgM0T55kNVqJAN7uGkb85zzWikI9WRfBPbgLnDtgvL7wmYmeyZOFaFvx2ayOO7Fme3j0t73o7LmRcVoe+U1tOiai3hAQgaAFAjvJcADyS5FiAWl4ivLXC8dYxqBAB/Pne9VhOKHkDRueBgMg2P5q3+ocJYgTHyX9TK7PIsT0CPAyB2Mr+J2fcVCWqddqTf9vDIhayIeWLQqT/0GyNyyGKxSZf4JcKzoBoeZtKhAh3d/NUV50ILxdD5ak5sqU9CHz7rkb2irfccuj0zQ/l3ppZi6gWQcfQ+4qVK82lWMTNj8i1yiSLs+nZxGFEldNRtbzIWvdkU6Rg1YL1ASdmh3LTKFuSRJln8IxTC8PGY4xfnELC2nJTycv59Elzm6H8LkZHL5V0q9U9wZwPxwn94amkns86EQI6lbXYuUDYWoRLmk0v8Xit7TLWZjLKtIBWwYVD4mnsqgXXYVEtJiks0vqElQGNbtkx6dRi6k2WE6rNEexiGD+wCdOs0PU6dWY1SA4wPPvscOnfq0IEQhYohsZCDFMV09i1TDxVr4SFJT1Ufg4AwY978jE+TzP9Z/ZhnS2AJixFunz3gXHxHr6ylYGOJXkjWHN6r1Fci+vc=
