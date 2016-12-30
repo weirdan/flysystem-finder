@@ -45,6 +45,27 @@ class HandlerFileinfoAdapter
         return $this->handler->getContents();
     }
 
+    public function getRealpath()
+    {
+        // there's no "real" path on an abstract fs
+        return $this->getPath();
+    }
+
+    public function getATime()
+    {
+        throw new NotImplementedException(__METHOD__);
+    }
+
+    public function getCTime()
+    {
+        throw new NotImplementedException(__METHOD__);
+    }
+
+    public function getMTime()
+    {
+        throw new NotImplementedException(__METHOD__);
+    }
+
     public function __call($method, $args)
     {
         return call_user_func_array([$this->handler, $method], $args);
