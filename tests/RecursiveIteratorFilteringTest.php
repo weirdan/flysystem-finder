@@ -3,7 +3,7 @@ namespace Weirdan\FlysystemFinder\Tests;
 
 use Iterator;
 use RecursiveIteratorIterator;
-use PHPUnit_Framework_TestCase as PHPUnit;
+use PHPUnit\Framework\TestCase as PHPUnit;
 use League\Flysystem\Adapter;
 use League\Flysystem\Filesystem;
 use org\bovigo\vfs\vfsStream;
