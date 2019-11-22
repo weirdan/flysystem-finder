@@ -8,7 +8,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="true"
-         syntaxCheck="false">
+         >
     <testsuites>
         <testsuite name="FlysystemFinder Suite">
             <directory>tests/</directory>

@@ -12,7 +12,7 @@ use Weirdan\FlysystemFinder\NotImplementedException;
 
 class RecursiveIteratorSortingTest extends PHPUnit
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->root = vfsStream::setup('testroot');
         $this->fs = new Filesystem(new Adapter\Local(vfsStream::url('testroot'), 0));

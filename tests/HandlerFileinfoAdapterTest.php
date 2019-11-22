@@ -8,7 +8,7 @@ use Weirdan\FlysystemFinder\HandlerFileinfoAdapter;
 
 class HandlerFileinfoAdapterTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->root = vfsStream::setup('testroot');
         $this->fs = new Flysystem\Filesystem(new Flysystem\Adapter\Local(vfsStream::url('testroot'), 0));
