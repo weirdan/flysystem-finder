@@ -17,7 +17,7 @@
     "require": {
         "php": "^7.1",
         "league/flysystem": "^1.0",
-        "phpunit/phpunit": "^8.4",
+        "phpunit/phpunit": "^9.0",
         "symfony/finder": "^5.0"
     },
     "autoload": {
